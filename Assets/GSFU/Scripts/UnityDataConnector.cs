@@ -63,7 +63,7 @@ public class UnityDataConnector : MonoBehaviour
 	
 	IEnumerator GetData()
 	{
-		string connectionString = webServiceUrl + "?ssid=" + spreadsheetId + "&sheet=" + worksheetName + "&pass=" + password + "&action=GetData";
+		string connectionString = webServiceUrl + "?ssid=" + spreadsheetId + "&sheet=" + worksheetName + "&pass=" + password + "&action=FetchData";
 		if (debugMode)
 			Debug.Log("Connecting to webservice on " + connectionString);
 

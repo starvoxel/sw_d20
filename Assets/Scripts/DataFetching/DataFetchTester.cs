@@ -5,6 +5,8 @@ using System.Collections;
 public class DataFetchTester : MonoBehaviour 
 {
 	#region Fields & Properties
+    protected int FETCH_COUNT = 10;
+
 	[SerializeField] protected string m_SpreadSheetID;
 	[SerializeField] protected string m_WorksheetName;
 
@@ -24,7 +26,7 @@ public class DataFetchTester : MonoBehaviour
 	#region Private Methods
 	public void OnButtonClick()
 	{
-		DataFetcher.Instance.Connect(m_SpreadSheetID, string.Empty, new DataFetcher.sConnectInfo(m_WorksheetName, OnDownloadComplete, OnDownloadUpdate, OnDownloadStarted));
+    	DataFetchingController.Instance.Fetch(m_SpreadSheetID, string.Empty, new DataFetchingController.sConnectInfo(m_WorksheetName, OnDownloadComplete, OnDownloadUpdate, OnDownloadStarted));
 	}
 
 	private void OnDownloadStarted(string worksheetName)

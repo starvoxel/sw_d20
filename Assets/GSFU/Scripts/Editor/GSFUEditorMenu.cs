@@ -9,7 +9,7 @@ public class GSFUEditorMenu : MonoBehaviour
 	{
 		UnityDataConnector conn =GameObject.Find("ConnectionExample").GetComponent<UnityDataConnector>();
 
-		string connectionString = conn.webServiceUrl + "?ssid=" + conn.spreadsheetId + "&sheet=" + conn.worksheetName + "&pass=" + conn.password + "&action=GetData";
+		string connectionString = conn.webServiceUrl + "?ssid=" + conn.spreadsheetId + "&sheet=" + conn.worksheetName + "&pass=" + conn.password + "&action=FetchData";
 		Debug.Log("Connecting to webservice on " + connectionString);
 		
 		WWW www = new WWW(connectionString);
